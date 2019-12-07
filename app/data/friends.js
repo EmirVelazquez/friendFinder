@@ -10,14 +10,14 @@ var friendArr = [
         photo: "https://www.washingtonpost.com/resizer/tu1zinlpwciKPEQpCw1IlLADqwc=/1440x0/smart/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/EY3YKMD5UM4LDJI24Q2BU53HQ4.jpg",
         scores: [
             5,
-            1,
-            3,
-            4,
-            2,
             5,
-            4,
             3,
-            2,
+            3,
+            5,
+            5,
+            5,
+            5,
+            1,
             5
         ]
     }
