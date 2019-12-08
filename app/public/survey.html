@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Friend Finder</title>
+    <!-- Jquery Link -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -15,135 +18,153 @@
 </head>
 
 <body>
-    <br>
     <div class="container">
-
-        <h2>Survey </h2>
-        <hr>
-        <h3><strong>About You</strong></h3>
-        <input type="text" id="name" class="form-control" placeholder="Name" required>
-
-        <h4><strong>Link to Photo</strong></h4>
-        <input type="text" id="photo" class="form-control" placeholder="image.example.com/yourphoto.jpg" required>
         <br>
-        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Survey </h2>
+                <hr>
+                <h3><strong>About You</strong></h3>
+                <input type="text" id="name" class="form-control" placeholder="Name" required>
 
-        <h3><strong>Question 1</strong></h3>
-        <h4>You consider yourself to be an outdoors person.</h4>
-        <select class="form-control" id="q1">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree) &#128078</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree) &#128077</option>
-        </select>
-
-        <h3><strong>Question 2</strong></h3>
-        <h4>People would consider you a very dependable friend.</h4>
-        <select class="form-control" id="q2">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree) &#128078</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree) &#128077</option>
-        </select>
-
-
-        <h3><strong>Question 3</strong></h3>
-        <h4>Your type of weekend involves resting at home with a good book or simply relaxing.</h4>
-        <select class="form-control" id="q3">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree) &#128078</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree) &#128077</option>
-        </select>
-
-
-        <h3><strong>Question 4</strong></h3>
-        <h4>During a conversation, you always think carefully about your responses before expressing them.</h4>
-        <select class="form-control" id="q4">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree) &#128078</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree) &#128077</option>
-        </select>
-
-
-        <h3><strong>Question 5</strong></h3>
-        <h4>Others would say that you don't get upset easily.</h4>
-        <select class="form-control" id="q5">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree) &#128078</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree) &#128077</option>
-        </select>
-
-
-        <h3><strong>Question 6</strong></h3>
-        <h4>When a friend is dealing with a difficult problem, they seek your advice first.</h4>
-        <select class="form-control" id="q6">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree) &#128078</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree) &#128077</option>
-        </select>
-
-
-        <h3><strong>Question 7</strong></h3>
-        <h4>You have no problem sharing some food from your plate.</h4>
-        <select class="form-control" id="q7">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree) &#128078</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree) &#128077</option>
-        </select>
-
-        <h3><strong>Question 8</strong></h3>
-        <h4>You make people happy when they are around you.</h4>
-        <select class="form-control" id="q8">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree) &#128078</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree) &#128077</option>
-        </select>
-
-        <h3><strong>Question 9</strong></h3>
-        <h4>You have no problem being alone at home without the company of other's.
-        </h4>
-        <select class="form-control" id="q9">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree) &#128078</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree) &#128077</option>
-        </select>
-
-        <h3><strong>Question 10</strong></h3>
-        <h4>Generally speaking, you are full of energy and always ready to go.</h4>
-        <select class="form-control" id="q10">
-            <option value=""></option>
-            <option value="1">1 (Strongly Disagree) &#128078</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5 (Strongly Agree) &#128077</option>
-        </select>
-
+                <h4><strong>Link to Photo</strong></h4>
+                <input type="text" id="photo" class="form-control" placeholder="image.example.com/yourphoto.jpg"
+                    required>
+                <br>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3><strong>Question 1</strong></h3>
+                <h4>You consider yourself to be an outdoors person.</h4>
+                <select type="number" class="form-control" id="question1" required>
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree) &#128078</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree) &#128077</option>
+                </select>
+            </div>
+            <div class="col-sm-6">
+                <h3><strong>Question 2</strong></h3>
+                <h4>People would consider you a very dependable friend.</h4>
+                <select type="number" class="form-control" id="question2" required>
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree) &#128078</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree) &#128077</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3><strong>Question 3</strong></h3>
+                <h4>Your type of weekend involves resting at home with a good book or simply relaxing.</h4>
+                <select type="number" class="form-control" id="question3" required>
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree) &#128078</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree) &#128077</option>
+                </select>
+            </div>
+            <div class="col-sm-6">
+                <h3><strong>Question 4</strong></h3>
+                <h4>During a conversation, you always think carefully about your responses before expressing them.</h4>
+                <select type="number" class="form-control" id="question4" required>
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree) &#128078</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree) &#128077</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3><strong>Question 5</strong></h3>
+                <h4>Others would say that you don't get upset easily.</h4>
+                <select type="number" class="form-control" id="question5" required>
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree) &#128078</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree) &#128077</option>
+                </select>
+            </div>
+            <div class="col-sm-6">
+                <h3><strong>Question 6</strong></h3>
+                <h4>When a friend is dealing with a difficult problem, they seek your advice first.</h4>
+                <select type="number" class="form-control" id="question6" required>
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree) &#128078</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree) &#128077</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3><strong>Question 7</strong></h3>
+                <h4>You have no problem sharing some food from your plate.</h4>
+                <select type="number" class="form-control" id="question7" required>
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree) &#128078</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree) &#128077</option>
+                </select>
+            </div>
+            <div class="col-sm-6">
+                <h3><strong>Question 8</strong></h3>
+                <h4>You make people happy when they are around you.</h4>
+                <select type="number" class="form-control" id="question8" required>
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree) &#128078</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree) &#128077</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3><strong>Question 9</strong></h3>
+                <h4>You have no problem being alone at home without the company of other's.
+                </h4>
+                <select type="number" class="form-control" id="question9" required>
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree) &#128078</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree) &#128077</option>
+                </select>
+            </div>
+            <div class="col-sm-6">
+                <h3><strong>Question 10</strong></h3>
+                <h4>Generally speaking, you are full of energy and always ready to go.</h4>
+                <select type="number" class="form-control" id="question10" required>
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree) &#128078</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly Agree) &#128077</option>
+                </select>
+            </div>
+        </div>
         <br>
         <!-- Submit Button -->
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="far fa-check-square"></i>
@@ -157,6 +178,62 @@
         </footer>
 
     </div>
+
+    <script type="text/javascript">
+        // On click of submit button event handler
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
+            // This block of code will ensure that the form is filled out before allowing user to hit submit
+            function allFilled() {
+                // Make a local variable that holds the truthy value of filledOut
+                var filledOut = true;
+                // This checks if every value is filled out for every form with class="form-control"
+                $(".form-control").each(function () {
+                    // If the value is empty on any of them, filled out is equal to false
+                    if ($(this).val() === "") {
+                        filledOut = false;
+                    }
+                });
+                // If they are all filled out then the var filledOut is unchanged and will be true allowing the submission
+                return filledOut;
+            }
+
+            // If allFilled is equal to true, form fields are all filled and user submission is allowed
+            if (allFilled()) {
+                // Take the values of the form and place inside a new object
+                var newFriend = {
+                    name: $("#name").val().trim().toLowerCase(),
+                    photo: $("#photo").val().trim(),
+                    scores: [
+                        $("#question1").val(),
+                        $("#question2").val(),
+                        $("#question3").val(),
+                        $("#question4").val(),
+                        $("#question5").val(),
+                        $("#question6").val(),
+                        $("#question7").val(),
+                        $("#question8").val(),
+                        $("#question9").val(),
+                        $("#question10").val()
+                    ]
+                };
+                console.log(newFriend);
+                // This code will post the user input data into the /api/friends array
+                $.post("/api/friends", newFriend, function (data) {
+                    console.log("Data successfully submitted!")
+                    // This line empties the user inputs
+                    $("#name").empty();
+                    $("#photo").empty();
+                    // This line empties the user inputs
+                    $(".form-control").empty();
+                    // location.reload();
+                });
+            } else {
+                alert("You have not submitted all fields, please verify your answers!");
+            }
+        });
+
+    </script>
 
 </body>
 
