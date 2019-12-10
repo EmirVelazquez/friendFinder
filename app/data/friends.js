@@ -20,6 +20,22 @@ var friendArr = [
             "1",
             "5"
         ]
+    },
+    {
+        name: "tardar sauce",
+        photo: "https://media.mnn.com/assets/images/2019/01/grumpy_cat.jpg.653x0_q80_crop-smart.jpg",
+        scores: [
+            "1",
+            "1",
+            "5",
+            "2",
+            "1",
+            "1",
+            "1",
+            "1",
+            "5",
+            "1"
+        ]
     }
 ];
 

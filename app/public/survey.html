@@ -20,6 +20,7 @@
 <body>
     <div class="container">
         <br>
+        <!-- <button type="submit" class="btn btn-primary btn-lg btn-block" id="testingButton">Test</button> -->
         <div class="row">
             <div class="col-sm-12">
                 <h2>Survey </h2>
@@ -233,40 +234,84 @@
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Testing Logic 
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        var newScores = ["5", "5", "3", "3", "5", "5", "5", "5", "1", "5"];
+        // var newScores =
+        // {
+        //     name: "Peky",
+        //     scores: ["5", "5", "3", "3", "5", "5", "5", "5", "1", "5"]
+        // };
 
-        var scoresArr = [
-            {
-                name: "boop",
-                scores: ["4", "2", "3", "1", "5", "3", "4", "2", "2", "3"]
-            },
-            {
-                name: "blap",
-                scores: ["5", "5", "5", "5", "5", "5", "5", "5", "5", "5"]
-            },
-            {
-                name: "weep",
-                scores: ["1", "2", "3", "4", "5", "1", "2", "3", "4", "5"]
-            }
-        ];
-        // This logs the first object from the scoresArr
-        // console.log(scoresArr[0].scores);
+        // var scoresArr = [
+        //     {
+        //         name: "zero",
+        //         scores: ["5", "5", "3", "3", "5", "5", "5", "5", "1", "5"]
+        //     },
+        //     {
+        //         name: "juan",
+        //         scores: ["4", "2", "3", "1", "5", "3", "4", "2", "2", "3"]
+        //     },
+        //     {
+        //         name: "doss",
+        //         scores: ["5", "5", "5", "5", "5", "5", "5", "5", "5", "5"]
+        //     },
+        //     {
+        //         name: "trees",
+        //         scores: ["1", "1", "3", "3", "1", "5", "1", "1", "5", "1"]
+        //     },
+        //     {
+        //         name: "quarto",
+        //         scores: ["5", "5", "3", "3", "5", "5", "5", "4", "1", "5"]
+        //     }
+        // ];
 
-        // Sum of all values in an array
-        const arrSum = arr => arr.reduce((a, b) => a + b, 0);
+        // //Global variable
+        // var compatibilityGoal = 0;
 
-        // Diff function
-        function differences() {
-            let diffAnswer = [];
-            for (var i = 0; i < newScores.length; i++) {
-                let diffBoth = Math.abs(newScores[i] - scoresArr[1].scores[i]);
-                diffAnswer.push(diffBoth);
-            }
-            console.log(diffAnswer);
-            let totalDifference = arrSum(diffAnswer);
-            console.log(totalDifference);
-        }
-        differences();
+        // // Sum of all values in an array
+        // const arrSum = arr => arr.reduce((a, b) => a + b, 0);
+
+        // // This function will check the new users compatibility based on question results
+        // function userCompatibility() {
+        //     for (var i = 0; i < scoresArr.length - 1; i++) {
+        //         arrIndex = i;
+        //         console.log("Compability Function is currently running for " + scoresArr[arrIndex].name);
+        //         differences(arrIndex);
+        //     }
+        //     console.log(compatibilityArray);
+        //     // This block of code checks the total difference array for the person who has the closest diff to zero
+        //     closest = compatibilityArray.reduce(function (prev, curr) {
+        //         return (Math.abs(curr - compatibilityGoal) < Math.abs(prev - compatibilityGoal) ? curr : prev);
+        //     });
+
+        //     console.log("The most compatible score is: " + closest);
+        // };
+        // // Helper function that checks differences between user score and scores inside data array
+        // function differences(index) {
+        //     let diffAnswer = [];
+        //     for (var i = 0; i < newScores.scores.length; i++) {
+        //         let diffBoth = Math.abs(newScores.scores[i] - scoresArr[arrIndex].scores[i]);
+        //         diffAnswer.push(diffBoth);
+        //     }
+        //     console.log(diffAnswer);
+        //     totalDifference = arrSum(diffAnswer);
+        //     console.log("Total Difference between new user & " + scoresArr[arrIndex].name + " is: " + totalDifference);
+        //     compatibilityArray.push(totalDifference);
+        // };
+        // // Function to find the most compatible user
+        // function mostCompatible() {
+        //     for (var i = 0; i < compatibilityArray.length; i++) {
+        //         if (closest === compatibilityArray[i]) {
+        //             console.log("The most compatible score has an index of: " + i);
+        //             console.log("The most compatible person is: " + scoresArr[i].name);
+        //         }
+        //     }
+        // };
+        // // Testing button that runs the compatibility logic after user clicks on the button
+        // $("#testingButton").on("click", function (event) {
+        //     compatibilityArray = [];
+        //     event.preventDefault();
+        //     userCompatibility();
+        //     mostCompatible();
+        // });
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         // Testing Logic
         // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -292,7 +337,7 @@
             // If allFilled is equal to true, form fields are all filled and user submission is allowed
             if (allFilled()) {
                 // Take the values of the form and place inside a new object
-                var newFriend = {
+                var userData = {
                     name: $("#name").val().trim().toLowerCase(),
                     photo: $("#photo").val().trim(),
                     scores: [
@@ -308,16 +353,25 @@
                         $("#question10").val()
                     ]
                 };
-                console.log(newFriend);
+                console.log(userData);
                 // This code will post the user input data into the /api/friends array
-                $.post("/api/friends", newFriend, function (data) {
+                $.post("/api/friends", userData, function (data) {
                     console.log("Data successfully submitted!")
                     // This line empties the user inputs
-                    $("#name").empty();
-                    $("#photo").empty();
-                    // This line empties the user inputs
-                    $(".form-control").empty();
+                    $("#name").val("");
+                    $("#photo").val("");
+                    $("#question1").val("");
+                    $("#question2").val("");
+                    $("#question3").val("");
+                    $("#question4").val("");
+                    $("#question5").val("");
+                    $("#question6").val("");
+                    $("#question7").val("");
+                    $("#question8").val("");
+                    $("#question9").val("");
+                    $("#question10").val("");
                     // location.reload();
+                    alert("Successful submission of your form!");
                 });
             } else {
                 alert("You have not submitted all fields, please verify your answers!");
