@@ -230,6 +230,47 @@
     </div>
 
     <script type="text/javascript">
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Testing Logic 
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        var newScores = ["5", "5", "3", "3", "5", "5", "5", "5", "1", "5"];
+
+        var scoresArr = [
+            {
+                name: "boop",
+                scores: ["4", "2", "3", "1", "5", "3", "4", "2", "2", "3"]
+            },
+            {
+                name: "blap",
+                scores: ["5", "5", "5", "5", "5", "5", "5", "5", "5", "5"]
+            },
+            {
+                name: "weep",
+                scores: ["1", "2", "3", "4", "5", "1", "2", "3", "4", "5"]
+            }
+        ];
+        // This logs the first object from the scoresArr
+        // console.log(scoresArr[0].scores);
+
+        // Sum of all values in an array
+        const arrSum = arr => arr.reduce((a, b) => a + b, 0);
+
+        // Diff function
+        function differences() {
+            let diffAnswer = [];
+            for (var i = 0; i < newScores.length; i++) {
+                let diffBoth = Math.abs(newScores[i] - scoresArr[1].scores[i]);
+                diffAnswer.push(diffBoth);
+            }
+            console.log(diffAnswer);
+            let totalDifference = arrSum(diffAnswer);
+            console.log(totalDifference);
+        }
+        differences();
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // Testing Logic
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
         // On click of submit button event handler
         $("#submit").on("click", function (event) {
             event.preventDefault();
