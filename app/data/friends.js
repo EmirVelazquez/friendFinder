@@ -36,6 +36,22 @@ var friendArr = [
             "5",
             "1"
         ]
+    },
+    {
+        name: "einstein the african grey",
+        photo: "https://media.fromthegrapevine.com/assets/images/2017/4/einstein-parrot-0407.jpg.696x0_q71_crop-smart.jpg",
+        scores: [
+            "3",
+            "4",
+            "3",
+            "3",
+            "3",
+            "2",
+            "3",
+            "5",
+            "3",
+            "3"
+        ]
     }
 ];
 

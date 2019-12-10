@@ -15,14 +15,9 @@ module.exports = function (app) {
         res.json(friendData);
     });
     app.post("/api/friends", function (req, res) {
-        friendData.push(req.body);
-        res.json(true);
+        var newFriend = req.body;
 
-        var newFriend = {
-            name: req.body.name,
-            photo: req.body.photo,
-            scores: req.body.scores
-        };
+        friendData.push(newFriend);
 
         //Global variable
         var compatibilityGoal = 0;
@@ -44,6 +39,7 @@ module.exports = function (app) {
             });
 
             console.log("The most compatible score is: " + closest);
+            mostCompatible();
         };
         // Helper function that checks differences between user score and scores inside data array
         function differences(index) {
@@ -60,15 +56,21 @@ module.exports = function (app) {
         function mostCompatible() {
             for (var i = 0; i < compatibilityArray.length; i++) {
                 if (closest === compatibilityArray[i]) {
+                    // Here the results were logged to get them on node terminal
                     console.log("The most compatible score has an index of: " + i);
                     console.log("The most compatible is: " + friendData[i].name);
+                    console.log("The most compatible has a picture of: " + friendData[i].photo);
+                    console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                    // Here the result is placed in a variable that is then sent back the client
+                    var matched = friendData[i];
+                    console.log(matched);
+                    return res.send(matched);
                 }
             }
         };
 
-
+        // Function calls
         userCompatibility();
-        mostCompatible();
 
     });
 };
