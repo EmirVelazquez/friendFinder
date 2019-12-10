@@ -24,4 +24,7 @@ This full-stack site takes in results from the users' survey, then compares thei
 5. Routing directory handles the js files for the path handling as well as the logic for posting new data and getting results.
 
 ### Links to Github repo and Heroku Live Site
+- GitHub Repo
 https://github.com/EmirVelazquez/friendFinder
+- Heroku Deployed
+https://damp-woodland-23972.herokuapp.com/
